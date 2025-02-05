@@ -21,6 +21,7 @@ def checkExtension(filePath):
   else:
     return f"[FAIL] '{filePath}' is of type ({fileMIME}), but has an extension claiming ({fileExtension}).\n"
 
+# Finally, we print the results.
 if __name__ == "__main__":
   filePath = input("\nInput an absolute file path: ")
   print(checkExtension(filePath))
