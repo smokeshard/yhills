@@ -23,4 +23,4 @@ def checkExtension(filePath):
 
 if __name__ == "__main__":
   filePath = input("\nInput an absolute file path: ")
-  print(checkExtension)
+  print(checkExtension(filePath))
