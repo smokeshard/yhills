@@ -1,3 +1,7 @@
+# Basic File Type Checker
+# Author: @smokeshard on Discord
+# ======================================================================================================================
+
 import os
 import mimetypes
 
@@ -14,7 +18,10 @@ def checkExtension(filePath):
     return f"[ERR.] '{filePath}' MIME type could not be determined.\n"
   with open(filePath, 'rb') as f:
     fileHexcode = f.read(4).hex().upper()
-  knownMIME = {"89504E47": "image/png", "FFD8FFDB": "image/jpeg", "FFD8FFE0": "image/jpeg", "FFD8FFE1": "image/jpeg", "504B0304": "application/zip",}
+  knownMIME = {
+    "89504E47": "image/png", "FFD8FFDB": "image/jpeg", "FFD8FFE0": "image/jpeg", "FFD8FFE1": "image/jpeg", 
+    "504B0304": "application/zip",
+  }
   fileMIME = knownMIME.get(fileHexcode, "Unknown")
   if fileMIME == fileExtension:
     return f"[SUCC] '{filePath}' is of type ({fileMIME}) and has a matching extension.\n"
